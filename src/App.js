@@ -5,6 +5,7 @@ import './App.css';
 import Sidebar from './Sidebar'
 import Mail from './Mail'
 import EmailList from './EmailList'
+import SendMail from './SendMail'
 import {
   BrowserRouter as Router,
   Routes,
@@ -27,7 +28,10 @@ function App() {
             <Route path="/" element={<EmailList />} />
           </Routes>
         </div>
-    </div>
+
+
+        <SendMail />
+      </div>
     </BrowserRouter>
     
   );
