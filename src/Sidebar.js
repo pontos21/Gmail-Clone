@@ -14,13 +14,17 @@ import IconButton from '@mui/material/IconButton';
 import PersonIcon from '@mui/icons-material/Person';
 import DuoIcon from '@mui/icons-material/Duo';
 import PhoneIcon from '@mui/icons-material/Phone';
+import { useDispatch } from 'react-redux'
+import { openSendMessage } from './features/mailSlice';
 
 const Sidebar = () => {
+    const dispatch = useDispatch()
     return (
         <div className="sidebar">
             <Button 
             startIcon={<AddIcon fontSize="large" />}
-            className="sidebar__compose" 
+            className="sidebar__compose"
+            onClick={() => dispatch(openSendMessage())}
             >
                 Compose
             </Button>

@@ -13,8 +13,11 @@ import {
   Link,
   BrowserRouter
 } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { selectSendMessageIsOpen} from './features/mailSlice'
 
 function App() {
+  const sendMessageIsOpen = useSelector(selectSendMessageIsOpen)
   return (
     <BrowserRouter>
       <div className='app'>
@@ -30,7 +33,7 @@ function App() {
         </div>
 
 
-        <SendMail />
+        {sendMessageIsOpen && <SendMail />}
       </div>
     </BrowserRouter>
     
