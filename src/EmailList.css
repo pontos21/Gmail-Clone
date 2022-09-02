@@ -4,6 +4,10 @@
 
 }
 
+.emailList::-webkit-scrollbar {
+    display: none;
+}
+
 .emailList__settings {
     position: sticky;
     top: 0;
@@ -22,4 +26,8 @@
     border-bottom: 1px solid whitesmoke;
     background-color: white;
     z-index: 999;
+}
+
+.emailList__List {
+    padding-bottom: 20%;
 }

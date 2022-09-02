@@ -5,11 +5,29 @@ import { IconButton } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import LabelImportantIcon from '@mui/icons-material/LabelImportant';
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { selectMail } from './features/mailSlice'
+
 
 const EmailRow = ({id, title, subject, description, time}) => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const openMail = () => {
+        dispatch(
+            selectMail({
+            id, 
+            title, 
+            subject, 
+            description, 
+            time
+        })
+        )
+        navigate('/mail')
+    }
+
     return (
-        <div onClick={() => navigate('/mail')} className="emailRow">
+        <div onClick={openMail} className="emailRow">
            <div className="emailRow__options">
             <Checkbox />
             <IconButton>
